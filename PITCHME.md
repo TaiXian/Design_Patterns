@@ -14,7 +14,7 @@
 
 @title[Moral Support]
 
-![Friends](assets/friends.jpg)
+![Friends](assets/image/friends.jpg)
 
 ---
 
