@@ -1,16 +1,20 @@
-# Sunkist
+# Clean Code
 
-### A GitPitch Presentation Template
+### NIC Practical Programmer Series
 
 ---
 
-## Tips!
+## Audience!
 
-<br>
+- You are a programmer
+- You want to become a better programmer
+- Or ...
 
-@fa[arrows gp-tip](Press F to go Fullscreen)
+---
 
-@fa[microphone gp-tip](Press S for Speaker Notes)
+@title[Moral Support]
+
+![Friends](assets/friends.jpg)
 
 ---
 
