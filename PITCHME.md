@@ -4,7 +4,7 @@
 
 ---
 
-## Audience!
+## Audience
 
 - You are a programmer
 - You want to become a better programmer
@@ -12,7 +12,7 @@
 
 ---
 
-@title[Moral Support]
+## Moral Support
 
 ![Friends](assets/image/friends.jpg)
 
