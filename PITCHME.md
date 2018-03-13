@@ -1,10 +1,10 @@
-# Clean Code
+## Clean Code
 
-### NIC Practical Programmer Series
+#### NIC Practical Programmer Series
 
 ---
 
-## Audience
+### Audience
 
 - You are a programmer
 - You want to become a better programmer
@@ -12,20 +12,27 @@
 
 ---
 
-## Moral Support
+### Moral Support
 
 ![Friends](assets/image/friends.jpg)
 
 ---
 
-## Template Features
+### Why is Clean Code Important
 
-- Code Presenting |
-- Repo Source, Static Blocks, GIST |
-- Custom CSS Styling |
-- Slideshow Background Image |
-- Slide-specific Background Images |
-- Custom Logo, TOC, and Footnotes |
+![Graph](assets/image/ProgrammerTimePieGrpah.JPG)
+
+---
+
+### Why is Clean Code Important
+
+![Graph](assets/image/productivityTime.png)
+
+---
+
+### What is Clean Code to you?
+
+![Comic](assets/image/cleanCodeComic.png)
 
 ---?code=sample/go/server.go&lang=golang&title=Golang File
 
