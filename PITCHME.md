@@ -34,6 +34,59 @@
 
 ![Comic](assets/image/cleanCodeComic.png)
 
+---
+
+### Agenda
+
+- Naming
+- Functions
+- Code Structure
+- Refactoring & Code Smells
+
+---
+
+![Naming](assets/image/Naming.jpg)
+
+---
+
+### Naming
+
+- Intention revealing names
+- Meaningful distinctions
+- Searchable names
+- Avoid mental mapping
+- Nouns for classes and variables and verbs for functions
+
+---
+
+```java
+public List<int[]> getThem() {
+  List<int[]> list1 = new ArrayList<int[]>();
+  for (int[] x : theList)
+    if (x[0] == 4)
+      list1.add(x);
+  return list1
+}
+```
+
+- What does this code do? |
+- Why does it do it? 
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---?code=sample/go/server.go&lang=golang&title=Golang File
 
 @[1,3-6](Present code found within any repo source file.)
