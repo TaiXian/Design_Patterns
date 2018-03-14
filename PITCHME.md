@@ -20,7 +20,7 @@
 
 ### Why is Clean Code Important
 
-![Graph](assets/image/ProgrammerTimePieGrpah.JPG)
+![Graph](assets/image/ProgrammerTimePieGrpah.JPG){ width=80%, height=80% }
 
 >The ratio of time spent reading versus writing is well over 10 to 1. We are
 >constantly reading old code as part of the effort to write new code. - Robert Martin
@@ -185,7 +185,7 @@ if (employee.isEligibleForBonus)
 #### Building Blocks
 ##### Functions should be small
 
-![Blocks](blocks.jpeg)
+![Blocks](assets/image/blocks.jpeg)
 
 ---
 
