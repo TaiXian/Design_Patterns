@@ -50,7 +50,7 @@
 
 ![Naming](assets/image/Naming.jpg)
 
-###### Fun Fact: My firstborn male child will be called *Maximus*
+Fun Fact: My firstborn male child will be called *Maximus*
 ---
 
 ### Naming
@@ -256,6 +256,8 @@ private void SumShoppingCartProductsToCurrentPrice()
 
 ![Sandwich](assets/image/cookie_sandwich.png)
 
+Fun Fact: I love ice cream sandwiches
+
 +++
 
 ```python
@@ -320,5 +322,22 @@ def makeReservation(quantity, date, restaurantId):
 - One level of abstraction |
 - Less arguments are better |
 - Impure Sandwhich -> No side effects* |
+
+---
+
+## Kata I
+
+---
+
+![Comic Style Guide](assets/image/styleGuide.png)
+
+---
+
+### Code Structure
+
+- Nested Code sucks
+- Looping to infinity and Beyond
+- Formatting Code 
+- Bla bla
 
 
