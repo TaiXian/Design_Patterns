@@ -43,7 +43,7 @@
 
 - Naming |
 - Functions |
-- Code Structure |
+- Code Readability |
 - Refactoring & Code Smells |
 
 ---
@@ -162,7 +162,7 @@ if (employee.isEligibleForBonus)
 
 ---
 
-### Naming
+### Naming Recap
 
 - Intention revealing names |
 - Meaningful distinctions | 
@@ -315,7 +315,7 @@ def makeReservation(quantity, date, restaurantId):
 
 ---
 
-### Functions
+### Functions Recap
 
 - Functons should be small, the smaller the better |
 - A function should only do one thing |
@@ -333,11 +333,87 @@ def makeReservation(quantity, date, restaurantId):
 
 ---
 
-### Code Structure
+### Code Readability
 
-- Nested Code sucks
-- Looping to infinity and Beyond
-- Formatting Code 
-- Bla bla
+- Nested Code sucks |
+- Looping |
+- Formatting Code |
+
+---
+
+#### Nested Code
+
+Photo
+
+---
+
+#### Looping 
+##### Shameful Functional Programming Plug
+
+```javascript
+// Artists with popularity <= 3 percentage of given playlist
+func getHipsterArtists(playlist) {
+	const maxPopularity = 3
+	let artists = []
+	// Get All the artists from a playlist and filter only unpopular artists
+	for(let songIndex = 0; songIndex < playlist.length; songIndex++) {
+		const artistsCount = playlist[songIndex].artists.length
+	    for (let artistIndex = 0; artistIndex  < artistsCount; artistIndex++) {
+	        if playlist[songIndex][artistIndex].popularity <= 3 {
+	        	artists.append(playlist[songIndex][artistIndex].name)
+	        }
+	}
+	return artists
+}
+
+//Functional with ES6
+const getHipsterArtists = (playlist) => {
+	const maxPopularity = 3
+	return playlist.
+		flatMap(song => song.artists).
+		filter(artists => artists.popularity <= maxPopularity).
+		map(artists => artists.name)
+}
+```
+@[2-13](Imperative Programming, you have to read deep in the code to see exactly whats happening)
+@[15-22](Functional Programming, concise and clean, generally no need for comments)
+@[2-13](This is a small example, but have you seen double/triple for loops with maybe 3 or 4 if statements inside?)
+
+---
+
+#### Formatting Code
+
+- Horizontal - Line Length |
+- Vertical - File Size |
+- Indentation |
+- Consistency |
+- Style Guide |
+
+--- 
+
+### Code Readability Recap
+
+- Nested Code sucks |
+- Looping |
+- Formatting Code |
+
+---
+
+### Refactoring & Code Smells
+
+- Types of Requirements |
+- Refactoring |
+- Code Smells |
+
+---
+
+#### Types of Requirements
 
 
+
+---
+
+![Image-Relative](http://giant.gfycat.com/BothLongAstrangiacoral.gif)
+
+## Thank you!
+### Be sure to check out the rest of our classes!
