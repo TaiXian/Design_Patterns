@@ -6,9 +6,9 @@
 
 ### Audience
 
-- You are a programmer
-- You want to become a better programmer
-- Or ...
+- You are a programmer |
+- You want to become a better programmer |
+- Or ... |
 
 ---
 
@@ -23,7 +23,7 @@
 ![Graph](assets/image/ProgrammerTimePieGrpah.JPG){ width=80%, height=80% }
 
 >The ratio of time spent reading versus writing is well over 10 to 1. We are
->constantly reading old code as part of the effort to write new code. - Robert Martin
+>constantly reading old code as part of the effort to write new code
 
 ---
 
@@ -145,10 +145,9 @@ for i in range(number_of_tasks):
   real_weeks = (real_days / work_days_per_week)
   sum += real_weeks
 ```
-
-- How about now? | 
-- Pythonistas can spot a naming error? | 
-- How can we make this cleaner? |
+@[1-8](How about now?)
+@[4](Although this name is great, it shadows a built in function)
+@[3, 5](Why acces via array? Why not For In?)
 
 ---
 
@@ -249,7 +248,7 @@ private void SumShoppingCartProductsToCurrentPrice()
 
 @[1-6](High Level Abstraction)
 @[8-13](Mid Level Abstraction)
-@[15-19](Detai Level)
+@[15-19](Detail Level)
 
 ---
 
