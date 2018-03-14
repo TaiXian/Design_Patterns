@@ -44,7 +44,7 @@
 - Naming |
 - Functions |
 - Code Readability |
-- Refactoring & Code Smells |
+- Refactoring |
 
 ---
 
@@ -155,7 +155,7 @@ for i in range(number_of_tasks):
 
 ```python
 # Check to see if the employee is elegibile for bonus
-if (employee.flag and employee.rating >= 4 && employee.years > 5)
+if (employee.flag and employee.rating >= 4 and employee.years > 5)
 
 if (employee.isEligibleForBonus)
 ```
@@ -349,7 +349,7 @@ Photo
 ---
 
 #### Looping 
-##### Shameful Functional Programming Plug
+##### Shameless Functional Programming Plug
 
 ```javascript
 // Artists with popularity <= 3 percentage of given playlist
@@ -394,6 +394,8 @@ const getHipsterArtists = (playlist) => {
 
 #### Broken Windows
 
++++
+
 ![Windows](https://image.slidesharecdn.com/designingviolenceoutofschools-110919110142-phpapp01/95/cpted-designing-violence-out-of-schools-27-728.jpg?cb=1335528522)
 
 ---
@@ -407,10 +409,11 @@ const getHipsterArtists = (playlist) => {
 
 ---
 
-### Refactoring & Code Smells
+### Refactoring
 
 - Types of Requirements |
 - Refactoring |
+- Technical Debt
 - Code Smells |
 
 ---
@@ -431,15 +434,19 @@ const getHipsterArtists = (playlist) => {
 
 #### Why Refactor
 
++++
+
 >By continuously improving the design of code, we make it easier and easier to work with.
 
 ---
 
-#### Code Smells
+#### What Is Refactoring
 
-![Technical_Debt](https://www.jeremymorgan.com/images/code-smell-2.jpg)
++++
 
+> Code Refactoring is the process of clarifying and simplifying the design of existing code, without changing its behavior.
 
+---
 
 
 #### When 
@@ -452,9 +459,42 @@ const getHipsterArtists = (playlist) => {
 
 ---
 
+#### Technical Debt
 
++++
 
+> The implied cost of additional rework caused by choosing an easy solution now instead of using a better approach that would take longer
 
++++
+
+![Technical_Debt](https://www.jeremymorgan.com/images/code-smell-2.jpg)
+
+---
+
+#### Code Smells
+
++++
+
+> A code smell is a surface indication that usually corresponds to a deeper problem in the system
+
+---
+
+#### Code Smell Categories
+
+- Bloaters
+- Object oritation Abusers
+- Change Preventers
+- Dispensables
+- Couplers
+
+---
+
+### Refactoring Recap
+
+- Types of Requirements |
+- Refactoring |
+- Technical Debt
+- Code Smells |
 
 ---
 
