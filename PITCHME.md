@@ -34,6 +34,8 @@
 
 ![Comic](assets/image/cleanCodeComic.png)
 
+<br>
+
 ---
 
 ### Agenda
@@ -47,16 +49,16 @@
 
 ![Naming](assets/image/Naming.jpg)
 
-<sup> Fun Fact: My firstborn male child will be called **Maximus** <sup>
+<sup> Fun Fact: My firstborn male child will be called **Maximus** </sup>
 ---
 
 ### Naming
 
-- Intention revealing names
-- Meaningful distinctions
-- Searchable names
-- Avoid mental mapping
-- Nouns for classes and variables and verbs for functions
+- Intention revealing names |
+- Meaningful distinctions | 
+- Searchable names |
+- Avoid mental mapping |
+- Nouns for classes and variables and verbs for functions |
 
 ---
 #### Intention revealing names
@@ -73,8 +75,6 @@ public List<int[]> getThem() {
 
 - What does this code do? |
 - Why does it do it? |
-
-@fa[arrow-down]
 
 +++
 
@@ -96,9 +96,7 @@ public List<Cell> getFlaggedCells() {
 
 #### Meaningful distinction
 
-@title[Function Names]
-
-<p><span class="slide-title">Function Names</span></p>
+##### Function Names
 
 ```
 getActiveAccount();
@@ -108,13 +106,9 @@ getActiveAccountInfo();
 
 @[1-3](Which one would you use to get the Active Account?)
 
-@fa[arrow-down]
-
 +++
 
-@title[Variable Names]
-
-<p><span class="slide-title">Variable Names</span></p>
+##### Variable Names
 
 ```
 moneyAmount vs money
@@ -123,7 +117,7 @@ theMessage vs message
 accountData vs account
 ```
 
-@[1-4](Don't make variables compete)
+@[1-4](Don't make variables compete for attention)
 
 ---
 
@@ -136,8 +130,6 @@ for i in range(34):
 
 @[2](Clearly everyone knows why we multiply times 4 and divide by 5)
 
-@fa[arrow-down]
-
 +++ 
 
 #### Searchable Names
@@ -145,17 +137,17 @@ for i in range(34):
 ```python
 real_days_per_ideal_day = 4
 work_days_per_week = 5
-number_of_tasks = len(task_estimate)
+number_of_tasks = len(task_estimates)
 sum = 0
 for i in range(number_of_tasks):
-  real_days = taskEstimate[i] * real_days_per_ideal_day
+  real_days = task_estimates[i] * real_days_per_ideal_day
   real_weeks = (real_days / work_days_per_week)
   sum += real_weeks
 ```
 
 - How about now? | 
-- Pythonistas can spot a bug? | 
-- Anyone can spot how we can make this cleaner? |
+- Pythonistas can spot a naming error? | 
+- How can we make this cleaner? |
 
 ---
 
