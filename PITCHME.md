@@ -31,7 +31,7 @@
 
 ![Graph](assets/image/productivityTime.png)
 
----size=auto 90%
+---
 
 ### What is Clean Code to you?
 
