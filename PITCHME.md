@@ -47,6 +47,7 @@
 
 ![Naming](assets/image/Naming.jpg)
 
+<sup> Fun Fact: My firstborn male child will be called **Maximus** <sup>
 ---
 
 ### Naming
@@ -58,6 +59,7 @@
 - Nouns for classes and variables and verbs for functions
 
 ---
+#### Intention revealing names
 
 ```java
 public List<int[]> getThem() {
@@ -65,19 +67,95 @@ public List<int[]> getThem() {
   for (int[] x : theList)
     if (x[0] == 4)
       list1.add(x);
-  return list1
+  return list1;
 }
 ```
 
 - What does this code do? |
-- Why does it do it? 
+- Why does it do it? |
+
+@fa[arrow-down]
+
++++
+
+#### Compared to
+
+```java
+public List<Cell> getFlaggedCells() {
+  List<Cell> flaggedCells = new ArrayList<Cell>();
+  for (Cell cell : gameBoard)
+    if (cell.isFlagged())
+      flaggedCells.add(cell));
+  return flaggedCells;
+}
+```
+
+- How about now? |
 
 ---
 
+#### Meaningful distinction
 
+@title[Function Names]
 
+<p><span class="slide-title">Function Names</span></p>
+```
+getActiveAccount();
+getActiveAccounts();
+getActiveAccountInfo();
+```
+@[1-3](Which one would you use to get the Active Account?)
 
+@fa[arrow-down]
 
++++
+
+@title[Variable Names]
+
+<p><span class="slide-title">Variable Names</span></p>
+
+```
+moneyAmount vs money
+customerInfo vs customer
+theMessage vs message
+accountData vs account
+```
+@[1-4](Don't make variables compete)
+
+---
+
+#### Avoid Mental Mapping
+
+```python
+for i in range(34):
+  s += (t[i]*4)/5;
+```
+@[2](Clearly everyone knows why we multiply times 4 and divide by 5)
+
+@fa[arrow-down]
+
++++ 
+
+#### Searchable Names
+
+```python
+real_days_per_ideal_day = 4
+work_days_per_week = 5
+number_of_tasks = len(task_estimate)
+sum = 0
+for i in range(number_of_tasks):
+  real_days = taskEstimate[i] * real_days_per_ideal_day
+  real_weeks = (real_days / work_days_per_week)
+  sum += real_weeks
+```
+
+- How about now? | 
+- Pythonistas can spot a bug? | 
+- Anyone can spot how we can make this cleaner? |
+
+---
+
+#### Good naming can replace comments
 
 
 
