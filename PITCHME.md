@@ -22,7 +22,10 @@
 
 ![Graph](assets/image/ProgrammerTimePieGrpah.JPG)
 
----
+>The ratio of time spent reading versus writing is well over 10 to 1. We are
+>constantly reading old code as part of the effort to write new code. - Robert Martin
+
+---size=auto 90%
 
 ### Why is Clean Code Important
 
@@ -32,9 +35,7 @@
 
 ### What is Clean Code to you?
 
-![Comic](assets/image/cleanCodeComic.png)
-
-<br>
+![Comic](assets/image/cleanCodeComic.png){ width: 80%, height: 80% }
 
 ---
 
@@ -49,7 +50,7 @@
 
 ![Naming](assets/image/Naming.jpg)
 
-<sup> Fun Fact: My firstborn male child will be called **Maximus** </sup>
+###### Fun Fact: My firstborn male child will be called *Maximus*
 ---
 
 ### Naming
@@ -152,6 +153,44 @@ for i in range(number_of_tasks):
 ---
 
 #### Good naming can replace comments
+
+```python
+# Check to see if the employee is elegibile for bonus
+if (employee.flag and employee.rating >= 4 && employee.years > 5)
+
+if (employee.isEligibleForBonus)
+```
+
+---
+
+### Naming
+
+- Intention revealing names |
+- Meaningful distinctions | 
+- Searchable names |
+- Avoid mental mapping |
+- Nouns for classes and variables and verbs for functions |
+
+---
+
+- Functons should be small, the smaller the better |
+- A function should only do one thing |
+- One level of abstraction |
+- Less arguments are better |
+- Impure Sandwhich -> No side effects* |
+
+---
+
+#### Building Blocks
+##### Functions should be small
+
+![Blocks](blocks.jpeg)
+
+---
+
+
+
+
 
 
 
