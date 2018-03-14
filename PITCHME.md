@@ -338,6 +338,7 @@ def makeReservation(quantity, date, restaurantId):
 - Nested Code sucks |
 - Looping |
 - Formatting Code |
+- Broken Windows |
 
 ---
 
@@ -387,15 +388,22 @@ const getHipsterArtists = (playlist) => {
 - Vertical - File Size |
 - Indentation |
 - Consistency |
-- Style Guide |
+- Style Guide & Linter |
 
 --- 
+
+#### Broken Windows
+
+![Windows](https://image.slidesharecdn.com/designingviolenceoutofschools-110919110142-phpapp01/95/cpted-designing-violence-out-of-schools-27-728.jpg?cb=1335528522)
+
+---
 
 ### Code Readability Recap
 
 - Nested Code sucks |
 - Looping |
 - Formatting Code |
+- Broken Windows |
 
 ---
 
@@ -409,11 +417,50 @@ const getHipsterArtists = (playlist) => {
 
 #### Types of Requirements
 
+- Functional |
+- Operational | 
+- **Developmental** |
+
+---
+
+#### Refactoring
+
+![Stickmen](http://deus.co.uk/images/refactoring.png)
+
+---
+
+#### Why Refactor
+
+>By continuously improving the design of code, we make it easier and easier to work with.
+
+---
+
+#### Code Smells
+
+![Technical_Debt](https://www.jeremymorgan.com/images/code-smell-2.jpg)
+
+
+
+
+#### When 
+
+- Brittle Code |
+- Turn around times on Functional Requirements increased |
+- Debugging takes longer |
+- Onboarding New Joiners takes longer |
+- Code Smells |
+
+---
+
+
+
 
 
 ---
 
 ![Image-Relative](http://giant.gfycat.com/BothLongAstrangiacoral.gif)
+
+--- 
 
 ## Thank you!
 ### Be sure to check out the rest of our classes!
