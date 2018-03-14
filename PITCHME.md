@@ -38,10 +38,10 @@
 
 ### Agenda
 
-- Naming
-- Functions
-- Code Structure
-- Refactoring & Code Smells
+- Naming |
+- Functions |
+- Code Structure |
+- Refactoring & Code Smells |
 
 ---
 
@@ -99,11 +99,13 @@ public List<Cell> getFlaggedCells() {
 @title[Function Names]
 
 <p><span class="slide-title">Function Names</span></p>
+
 ```
 getActiveAccount();
 getActiveAccounts();
 getActiveAccountInfo();
 ```
+
 @[1-3](Which one would you use to get the Active Account?)
 
 @fa[arrow-down]
@@ -120,6 +122,7 @@ customerInfo vs customer
 theMessage vs message
 accountData vs account
 ```
+
 @[1-4](Don't make variables compete)
 
 ---
@@ -130,6 +133,7 @@ accountData vs account
 for i in range(34):
   s += (t[i]*4)/5;
 ```
+
 @[2](Clearly everyone knows why we multiply times 4 and divide by 5)
 
 @fa[arrow-down]
