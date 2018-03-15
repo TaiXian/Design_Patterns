@@ -55,6 +55,7 @@
 - Functions |
 - Code Readability |
 - Refactoring |
+- Kata |
 
 ---
 
@@ -332,10 +333,6 @@ def makeReservation(quantity, date, restaurantId):
 - One level of abstraction |
 - Less arguments are better |
 - Impure Sandwhich -> No side effects* |
-
----
-
-## Kata I
 
 ---
 
