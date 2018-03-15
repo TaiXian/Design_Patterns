@@ -4,10 +4,10 @@
 # For details, visit Wiki:
 # https://github.com/gitpitch/gitpitch/wiki/Slideshow-Settings
 #
-theme : sky
+theme : black
 theme-override : assets/css/PITCHME.css
 # theme-override : assets/css/PITCHME.codemax.css
-logo : assets/image/logo.png
+#logo : assets/image/logo.png
 highlight : atom-one-dark
 transition : none
 published : true
