@@ -52,11 +52,11 @@
 
 +++
 
-> I like my code to be elegant and efficient. The logic should be straightforward to make it hard for bugs to hide, the dependencies minimal to ease maintenance, error handling complete according to an articulated strategy, and performance close to optimal so as not to tempt people to make the code messy with unprincipled optimizations. Clean code does one thing well.
+> I like my code to be **elegant** and efficient. The logic should be straightforward to make it hard for bugs to hide, the dependencies **minimal** to ease maintenance, error handling complete according to an articulated strategy, and performance close to optimal so as not to tempt people to make the code messy with unprincipled optimizations. Clean code does **one** thing well.
 
 +++
 
->Clean code can be read, and enhanced by a developer other than its original author. It has unit and acceptance tests. It has meaningful names. It provides one way rather than many ways for doing one thing. It has minimal dependencies, which are explicitly defined, and provides a clear and minimal API.
+>Clean code is **simple** and direct. Clean code reads like well-written **prose**. Clean code never obscures the designer’s intent but rather is full of crisp abstractions and straightforward lines of control.
 
 ---
 
