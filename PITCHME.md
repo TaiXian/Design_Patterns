@@ -4,6 +4,17 @@
 
 ---
 
+### Practical Programmer Series
+
+- **Clean Code**
+- Code Complete
+- Testable Code 
+- Code Reviewing
+- Design Patterns
+- Functional Programming
+
+---
+
 ### Audience
 
 - You are a programmer |
@@ -173,15 +184,6 @@ if (employee.isEligibleForBonus)
 
 ---
 
-### Naming Recap
-
-- Intention revealing names |
-- Meaningful distinctions | 
-- Searchable names |
-- Avoid mental mapping |
-- Nouns for classes and variables and verbs for functions |
-
----
 ### Functions
 
 - Functons should be small, the smaller the better |
@@ -326,16 +328,6 @@ def makeReservation(quantity, date, restaurantId):
 
 ---
 
-### Functions Recap
-
-- Functons should be small, the smaller the better |
-- A function should only do one thing |
-- One level of abstraction |
-- Less arguments are better |
-- Impure Sandwhich -> No side effects* |
-
----
-
 ![Comic Style Guide](assets/image/styleGuide.png)
 
 ---
@@ -407,15 +399,6 @@ const getHipsterArtists = (playlist) => {
 
 ---
 
-### Code Readability Recap
-
-- Nested Code sucks |
-- Looping |
-- Formatting Code |
-- Broken Windows |
-
----
-
 ### Refactoring
 
 - Types of Requirements |
@@ -429,7 +412,7 @@ const getHipsterArtists = (playlist) => {
 
 - Functional |
 - Operational | 
-- **Developmental** |
+- Developmental |
 
 ---
 
@@ -489,19 +472,19 @@ const getHipsterArtists = (playlist) => {
 #### Code Smell Categories
 
 - Bloaters
-- Object oritation Abusers
+- Object orientation Abusers
 - Change Preventers
 - Dispensables
 - Couplers
 
 ---
 
-### Refactoring Recap
+### How to write unmaintanable code
 
-- Types of Requirements |
-- Refactoring |
-- Technical Debt |
-- Code Smells |
+- Use horrible naming for variables and functions
+- Don't break up your functions into abstract levels
+- Make your code look like a maze
+- Compete to see who has the most technical debt
 
 ---
 
