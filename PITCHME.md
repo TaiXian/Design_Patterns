@@ -471,20 +471,20 @@ const getHipsterArtists = (playlist) => {
 
 #### Code Smell Categories
 
-- Bloaters
-- Object orientation Abusers
-- Change Preventers
-- Dispensables
-- Couplers
+- Bloaters |
+- Object orientation Abusers |
+- Change Preventers |
+- Dispensables |
+- Couplers |
 
 ---
 
 ### How to write unmaintanable code
 
-- Use horrible naming for variables and functions
-- Don't break up your functions into abstract levels
-- Make your code look like a maze
-- Compete to see who has the most technical debt
+- Use horrible naming for variables and functions |
+- Don't break up your functions into abstract levels |
+- Make your code look like a maze |
+- Compete to see who has the most technical debt |
 
 ---
 
