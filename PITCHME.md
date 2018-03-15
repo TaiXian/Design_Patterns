@@ -199,7 +199,6 @@ if (employee.isEligibleForBonus)
 ---
 
 #### Building Blocks
-##### Functions should be small
 
 ![Blocks](assets/image/blocks.jpeg)
 
