@@ -5,10 +5,10 @@
 # https://github.com/gitpitch/gitpitch/wiki/Slideshow-Settings
 #
 theme : black
-theme-override : assets/css/PITCHME.css
+#theme-override : assets/css/PITCHME.css
 # theme-override : assets/css/PITCHME.codemax.css
 #logo : assets/image/logo.png
 highlight : atom-one-dark
 transition : none
 published : true
-footnote : "GitPitch [ Sunkist ] Presentation Template"
+#footnote : "GitPitch [ Sunkist ] Presentation Template"
