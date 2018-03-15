@@ -22,8 +22,8 @@
 - Or ... |
 
 Note:
-Remind them about interactive Q & A
-Make joke about every presentatio is "interactive" but you are forcing them
+- Remind them about interactive Q & A
+- Make joke about every presentatio is "interactive" but you are forcing them
 
 ---
 
