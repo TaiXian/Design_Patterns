@@ -14,6 +14,7 @@
 - Functional Programming
 
 Note:
+Inspiration: Great information out there for our profession that we never got taught.
 Goal: Walk away from here with knowledge thats immediately applicable to your coding.
 
 ---
