@@ -48,6 +48,10 @@ Note:
 
 ![Graph](assets/image/productivityTime.png)
 
+Note:
+- Technical Debt
+- Complexity of Project
+
 ---
 
 ### What is Clean Code to you?
@@ -58,9 +62,19 @@ Note:
 
 > I like my code to be **elegant** and efficient. The logic should be straightforward to make it hard for bugs to hide, the dependencies **minimal** to ease maintenance, error handling complete according to an articulated strategy, and performance close to optimal so as not to tempt people to make the code messy with unprincipled optimizations. Clean code does **one** thing well.
 
+Note:
+- Elegant
+- Minimal
+- One
+
 +++
 
 >Clean code is **simple** and direct. Clean code reads like well-written **prose**. Clean code never obscures the designer’s intent but rather is full of crisp abstractions and straightforward lines of control.
+
+Note:
+- Simple
+- Prose: Code is functional
+- Art / Artists
 
 ---
 
@@ -183,9 +197,11 @@ for i in range(number_of_tasks):
 # Check to see if the employee is elegibile for bonus
 if (employee.flag and employee.rating >= 4 and employee.years > 5)
 
-if (employee.isEligibleForBonus)
+if (employee.isEligibleForBonus())
 ```
 
+Note:
+- is / has Function Names
 ---
 
 ### Functions
@@ -201,6 +217,11 @@ if (employee.isEligibleForBonus)
 #### Building Blocks
 
 ![Blocks](assets/image/blocks.jpeg)
+
+Note:
+- Level Of Astraction
+- Composing
+- Small
 
 ---
 
@@ -417,6 +438,9 @@ const getHipsterArtists = (playlist) => {
 - Operational | 
 - Developmental |
 
+Note:
+- Raise hand if you have had a refactoring sprint or investment to just improve code readability
+
 ---
 
 #### Refactoring
@@ -479,6 +503,13 @@ const getHipsterArtists = (playlist) => {
 - Change Preventers |
 - Dispensables |
 - Couplers |
+
+Note:
+- Gargantuan Porpotion
+- Incorrect Application of OO
+- Makes change so expensive you dont want to do it
+- Pointless/uneeded
+- Excessive Coupling 
 
 ---
 
