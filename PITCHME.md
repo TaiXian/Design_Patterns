@@ -346,7 +346,7 @@ def makeReservation(quantity, date, restaurantId):
 
 #### Nested Code
 
-Photo
+![Graph](assets/image/nestedIf.jpg)
 
 ---
 
