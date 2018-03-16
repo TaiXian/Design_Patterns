@@ -524,6 +524,12 @@ Note:
 
 # Kata
 
+Note:
+- Naming: clear and concise
+- Functions: level of abstraction, one thing, small
+- Code smells: are there any?
+- Refactor: where would you refactor
+
 ---
 
 ### How to write unmaintanable code
