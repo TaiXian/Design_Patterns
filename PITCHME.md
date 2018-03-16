@@ -13,6 +13,9 @@
 - Design Patterns
 - Functional Programming
 
+Note:
+Goal: Walk away from here with knowledge thats immediately applicable to your coding.
+
 ---
 
 ### Audience
@@ -24,6 +27,7 @@
 Note:
 - Remind them about interactive Q & A
 - Make joke about every presentatio is "interactive" but you are forcing them
+- Questions are welcome and encouraged, means you care 
 
 ---
 
@@ -49,6 +53,7 @@ Note:
 ![Graph](assets/image/productivityTime.png)
 
 Note:
+- Time is Application Age
 - Technical Debt
 - Complexity of Project
 
@@ -439,7 +444,11 @@ const getHipsterArtists = (playlist) => {
 - Developmental |
 
 Note:
+- Functional: Use cases, features
+- Operational: Performance, SLA
+- Developmental: Developers QOL
 - Raise hand if you have had a refactoring sprint or investment to just improve code readability
+
 
 ---
 
@@ -510,6 +519,10 @@ Note:
 - Makes change so expensive you dont want to do it
 - Pointless/uneeded
 - Excessive Coupling 
+
+---
+
+# Kata
 
 ---
 
