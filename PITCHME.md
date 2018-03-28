@@ -73,7 +73,7 @@ class MallardDuck extends Duck {
 ```
 ---
 ### Problem:
-Flight |
+- Flight |
 ---
 ### Solution 1:
 - Add a fly method to the Duck class |
