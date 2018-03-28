@@ -1,4 +1,4 @@
-## Clean Code
+## Design Patterns
 
 #### **NIC** Practical Programmer Series
 
@@ -6,545 +6,338 @@
 
 ### Practical Programmer Series
 
-- **Clean Code**
+- Clean Code
 - Code Complete
 - Testable Code 
 - Code Reviewing
-- Design Patterns
+- **Design Patterns**
 - Functional Programming
 
-Note:
-Inspiration: Great information out there for our profession that we never got taught.
-Goal: Walk away from here with knowledge thats immediately applicable to your coding.
 
 ---
 
 ### Audience
 
-- You are a programmer |
+- You try to practice object oriented design |
 - You want to become a better programmer |
-- Or ... |
-
-Note:
-- Remind them about interactive Q & A
-- Make joke about every presentatio is "interactive" but you are forcing them
-- Questions are welcome and encouraged, means you care 
 
 ---
 
-### Moral Support
+### Why are Design Patterns Important
 
-![Friends](assets/image/friends.jpg)
-
----
-
-### Why is Clean Code Important
-
-![Graph](assets/image/ProgrammerTimePieGrpah.JPG){ width=80%, height=80% }
-
-+++
-
->The ratio of time spent reading versus writing is well over 10 to 1. We are
->constantly reading old code as part of the effort to write new code
-
----
-
-### Why is Clean Code Important
-
-![Graph](assets/image/productivityTime.png)
-
-Note:
-- Time is Application Age
-- Technical Debt
-- Complexity of Project
-
----
-
-### What is Clean Code to you?
-
-![Comic](assets/image/cleanCodeComic.png){ width: 80%, height: 80% }
-
-+++
-
-> I like my code to be **elegant** and efficient. The logic should be straightforward to make it hard for bugs to hide, the dependencies **minimal** to ease maintenance, error handling complete according to an articulated strategy, and performance close to optimal so as not to tempt people to make the code messy with unprincipled optimizations. Clean code does **one** thing well.
-
-Note:
-- Elegant
-- Minimal
-- One
-
-+++
-
->Clean code is **simple** and direct. Clean code reads like well-written **prose**. Clean code never obscures the designer’s intent but rather is full of crisp abstractions and straightforward lines of control.
-
-Note:
-- Simple
-- Prose: Code is functional
-- Art / Artists
+- Because object oriented design is hard |
+- Because it is nice to have words for things |
+- Someone else has already done the hard work |
 
 ---
 
 ### Agenda
 
-- Naming |
-- Functions |
-- Code Readability |
-- Refactoring |
-- Kata |
+- Strategy |
+- Factory |
+- Decorator |
 
 ---
 
-![Naming](assets/image/Naming.jpg)
+### SimUDuck
 
-Fun Fact: My firstborn male child will be called *Maximus*
----
-
-### Naming
-
-- Intention revealing names |
-- Meaningful distinctions | 
-- Searchable names |
-- Avoid mental mapping |
-- Nouns for classes and variables and verbs for functions |
+- Duck pond simulation App
+- large number of duck species
+    - these species swim, fly and quack
+- Designed OO, one duck superclass, all others inherit
 
 ---
-#### Intention revealing names
+
+### SimUDuck
 
 ```java
-public List<int[]> getThem() {
-  List<int[]> list1 = new ArrayList<int[]>();
-  for (int[] x : theList)
-    if (x[0] == 4)
-      list1.add(x);
-  return list1;
+abstract class Duck {
+    public void quack(){}
+    public void swim(){}
+    public abstract void display();
+    //other things ducks do...
 }
 ```
+---
+```java
+class RedHeadDuck extends Duck {
+    public void display(){
+        //look like a RedHead duck
+    }
+}
+class MallardDuck extends Duck {
+    public void display(){
+        //look like a mallard duck
+    }
+}
+```
+---
+###Problem:
+Flight |
+---
+###Solution 1:
+- Add a fly method to the Duck class |
+- All ducks will inherit the fly behavior |
+- Much the same way as quack or swim |
+---
 
-- What does this code do? |
-- Why does it do it? |
-
-+++
-
-#### Compared to
+### SimUDuck
 
 ```java
-public List<Cell> getFlaggedCells() {
-  List<Cell> flaggedCells = new ArrayList<Cell>();
-  for (Cell cell : gameBoard)
-    if (cell.isFlagged())
-      flaggedCells.add(cell));
-  return flaggedCells;
+abstract class Duck {
+    public void quack(){}
+    public void swim(){}
+    public abstract void display();
+    //other things ducks do...
 }
 ```
-
-- How about now? |
-
 ---
 
-#### Meaningful distinction
-
-##### Function Names
-
-```
-getActiveAccount();
-getActiveAccounts();
-getActiveAccountInfo();
-```
-
-@[1-3](Which one would you use to get the Active Account?)
-
-+++
-
-##### Variable Names
-
-```
-moneyAmount vs money
-customerInfo vs customer
-theMessage vs message
-accountData vs account
-```
-
-@[1-4](Don't make variables compete for attention)
-
----
-
-#### Avoid Mental Mapping
-
-```python
-for i in range(34):
-  s += (t[i]*4)/5;
-```
-
-@[2](Clearly everyone knows why we multiply times 4 and divide by 5)
-
-+++ 
-
-#### Searchable Names
-
-```python
-real_days_per_ideal_day = 4
-work_days_per_week = 5
-number_of_tasks = len(task_estimates)
-sum = 0
-for i in range(number_of_tasks):
-  real_days = task_estimates[i] * real_days_per_ideal_day
-  real_weeks = (real_days / work_days_per_week)
-  sum += real_weeks
-```
-@[1-8](How about now?)
-@[4](Although this name is great, it shadows a built in function)
-@[3, 5](Why acces via array? Why not For In?)
-
----
-
-#### Good naming can replace comments
-
-```python
-# Check to see if the employee is elegibile for bonus
-if (employee.flag and employee.rating >= 4 and employee.years > 5)
-
-if (employee.isEligibleForBonus())
-```
-
-Note:
-- is / has Function Names
----
-
-### Functions
-
-- Functons should be small, the smaller the better |
-- A function should only do one thing |
-- One level of abstraction |
-- Less arguments are better |
-- Impure Sandwhich -> No side effects* |
-
----
-
-#### Building Blocks
-
-![Blocks](assets/image/blocks.jpeg)
-
-Note:
-- Level Of Astraction
-- Composing
-- Small
-
----
-
-#### Code Examples 
+### SimUDuck
 
 ```java
-public void Checkout()
-{
-  Price CurrentPrice = new Price();
-  foreach(var product in CurrentShoppingCart)
-    CurrentPrice.Add(product.Price);
-  foreach(var coupon in CurrentDiscounts)
-    CurrentPrice.Discount(coupon.Price);
-
-  var billingInfo = BillingRepository.get(BillingId);
-  if (billingInfo.CheckIfStillValid() == False)
-  {
-    DisplayError("Invalid Billing Information")
-    return;
-  }
-
-  var paymentResult = PaymentGateway.Charge(billingInfo, CurrentPrice);
-  if (paymentResult.Success == false)
-  {
-    DisplayError("Payment Processing Error");
-    return;
-  }
-  DisplayMessage("Thank you for your order");
+abstract class Duck {
+    public void quack(){}
+    public void swim(){}
+    public void fly(){}
+    public abstract void display();
+    //other things ducks do...
 }
 ```
-@[3-7](We first Calculate our Price by summing product prices and subtracting discount prices)
-@[9-14](We then confirm if the billing info is valid)
-@[16-23](Finally we charge the billingInfo card the currentPrice)
-@[1-24](Think we can use our magic refactoring wand?)
+---
+### Problem 1.1:
+Not all ducks should fly |
 
-+++
-
+---
+### Problem 1.1: Rubber Ducks
 ```java
-public void Checkout()
-{
-  UpdateCurrentTotalPrice()
-  ChargeCustomer()
-  DisplayResult()
-}
-
-private void UpdateCurrentTotalPrice()
-{
-  Price CurrentPrice = new Price()
-  SumShoppingCartProductsToCurrentPrice(CurrentPrice);
-  ApplyShoppingCartDiscountsToCurrentPrice(CurrentPrice);
-}
-
-private void SumShoppingCartProductsToCurrentPrice()
-{
-  foreach(var product in CurrentShoppingCart)
-    CurrentPrice.Add(product.Price);
-}
-
-// etc ...
-```
-
-@[1-6](High Level Abstraction)
-@[8-13](Mid Level Abstraction)
-@[15-19](Detail Level)
-
----
-
-#### Impure Sandwich
-
-![Sandwich](assets/image/cookie_sandwich.png)
-
-Fun Fact: I love ice cream sandwiches
-
-+++
-
-```python
-# Simplified version of making a reservation at a restaurant
-def makeReservation(quantity, date, restaurantId):
-	restaurant = Restaurant.getRestaurant(restaurantId) # ORM 
-	reservationsOnDate = filter(lambda reservation: reservation.date == date, restaurant.reservations)
-	available_seats = restaurant.capacity - len(reservationsOnDate)
-	if available_seats >= quantity:
-		return Restaurant.reserve(data, quanitity) # Returns a reservation String from db call
-	else:
-		return None # Client Handles None
-```
-
-@[2-9](Code is easy to read, seems straighfoward what we are doing)
-@[3](Here is our culprit, making we are mixing a database call with our business logic)
-@[4-6](This is our business logic)
-@[7](More of this impure **Hogwash**!)
-
-+++
-
-```python
-# Impure Function Call
-def getRestaurant(restaurantId):
-	restaurant = Restaurant.getRestaurant(restaurant)
-
-
-# Business Logic
-@_.curry
-def canMakeReservation(quantity, date, restaurant):
-	reservationsOnDate = filter(lambda reservation: reservation.date == date, restaurant.reservations)
-	available_seats = restaurant.capacity - len(reservationsOnDate)
-	if available_seats >= quantity:
-		return Some(Reservation(quantity, date)) # Creates a reservation object
-	else:
-		return None
-
-#Impure Function Call
-def reserve(reservation):
-	return Restaurant.reserve(reservation)
-
-# Yummy Impure Sandwhich
-def makeReservation(quantity, date, restaurantId):
-	return _.compose(
-			getRestaurant(restaurantId),
-			canMakeReservation(quantity, date),
-			lambda reservation: reserve(reservation) if reservation else None # Does your language have Options?
-		)
-```
-@[1-3](First Impure DB Call)
-@[6-14](Business Logic Pure Function)
-@[16-18](Second Impure DB Call)
-@[20-26](We build our impure sandwhich via compose)
-@[25](**Note** This Janky Ternary Operation, Does your language support Option?)
-
----
-
-![Comic Style Guide](assets/image/styleGuide.png)
-
----
-
-### Code Readability
-
-- Nested Code sucks |
-- Looping |
-- Formatting Code |
-- Broken Windows |
-
----
-
-#### Nested Code
-
-![Graph](assets/image/nestedIf.jpg)
-
----
-
-#### Looping 
-##### Shameless Functional Programming Plug
-
-```javascript
-// Artists with popularity <= 3 percentage of given playlist
-func getHipsterArtists(playlist) {
-	const maxPopularity = 3
-	let artists = []
-	// Get All the artists from a playlist and filter only unpopular artists
-	for(let songIndex = 0; songIndex < playlist.length; songIndex++) {
-		const artistsCount = playlist[songIndex].artists.length
-	    for (let artistIndex = 0; artistIndex  < artistsCount; artistIndex++) {
-	        if playlist[songIndex][artistIndex].popularity <= 3 {
-	        	artists.append(playlist[songIndex][artistIndex].name)
-	        }
-	}
-	return artists
-}
-
-//Functional with ES6
-const getHipsterArtists = (playlist) => {
-	const maxPopularity = 3
-	return playlist.
-		flatMap(song => song.artists).
-		filter(artists => artists.popularity <= maxPopularity).
-		map(artists => artists.name)
+class RubberDuck extends Duck {
+    public void quack(){
+        // overwritten to squeak
+    }
+    public void display(){
+        //look like a rubber duck
+    }
 }
 ```
-@[2-13](Imperative Programming, you have to read deep in the code to see exactly whats happening)
-@[15-22](Functional Programming, concise and clean, generally no need for comments)
-@[2-13](This is a small example, but have you seen double/triple for loops with maybe 3 or 4 if statements inside?)
-
+---
+### Solution 1.1: Overwrite fly method
+```java
+class RubberDuck extends Duck {
+    public void fly(){
+        //don't
+    }
+    public void quack(){
+        // overwritten to squeak
+    }
+    public void display(){
+        //look like a mallard duck
+    }
+}
+```
+---
+### Problem 1.2: More Flightless, Quackless Ducks
+You have plans to add wooden, plastic, decoy and baby duck in an upcoming release |
+As more flightless ducks are added, more and more overwriting will be necessary |
+---
+### Solution 1.2: Interfaces
+Have ducks implement the Flyable or Quackable interface  |
+Ducks which don't fly or quack never need worry about that |
+---
+### Problem 1.3: That is a bad idea
+Code duplication like crazy |
+Any time you want to change how fly works you must change all 'normal' ducks |
+---
+### Problem 1.3: That is a bad idea
+Inheritance isn't going to be a good solution  |
+Loading up on interfaces isn'y going to be a good solution |
+---
+### Thinking 1.3
+- Encapsulate (Separate)
+    - Changes
+    - That which stays the same
+- Duck seems to be mostly OK
+---
+### Solution 1.3
+- Fly and Quack are what change between ducks
+- Leave Duck alone, other than fly and quack
+- Encapsulate each behavior
+---
+### Solution 1.3
+- Interface for Fly based behaviors
+- Interface for Quack based behaviors
+- Create classes for the different implementations |
+- each should implement one of the interfaces |
+---
+### Aside 1.3
+- Allow duck behavior to change dynamically |
+- Put setters on ducks to load these behaviors |
+- ex. Wounded ducks might not fly |
+---
+### Solution 1.3
+```java
+interface QuackBehavior{
+    public void fly();
+}
+class Quack implements QuackBehavior {
+    public void fly(){
+        //implement 'normal' quacking
+    }
+}
+class Squeak implements QuackBehavior {
+    public void fly(){
+        //squeak
+    }
+}
+class Mute implements QuackBehavior {
+    public void fly(){
+        //don't quack
+    }
+}
+```
 ---
 
-#### Formatting Code
-
-- Horizontal - Line Length |
-- Vertical - File Size |
-- Indentation |
-- Consistency |
-- Style Guide & Linter |
-
---- 
-
-#### Broken Windows
-
-+++
-
-![Windows](https://image.slidesharecdn.com/designingviolenceoutofschools-110919110142-phpapp01/95/cpted-designing-violence-out-of-schools-27-728.jpg?cb=1335528522)
-
+### Solution 1.3
+```java
+interface QuackBehavior{
+    public void quack();
+}
+class Quack implements QuackBehavior {
+    public void quack(){
+        //implement 'normal' quacking
+    }
+}
+class Squeak implements QuackBehavior {
+    public void quack(){
+        //squeak
+    }
+}
+class Mute implements QuackBehavior {
+    public void quack(){
+        //don't quack
+    }
+}
+```
+---
+### Solution 1.3
+- New ducks can reuse our existing behaviors |
+- We can add new behaviors without changing existing behaviors |
+---
+### Aside 1.3
+- What would need to change to add rocket-powered flying? |
+- What might want quacking behavior that isn't at all a duck? |
+---
+### Solution 1.3
+- How do we plug in these behaviors?
+---
+### Solution 1.3
+```java
+abstract class Duck {
+    protected FlyBehavior flyBehavior;
+    protected QuackBehavior quackBehavior;
+    public void quack(){
+        quackBehavior.quack();
+    }
+    public void swim(){}
+    public void fly(){
+        flyBehavior.fly();
+    }
+    public abstract void display();
+    public void setFlyBehavior(FlyBehavior flyBehavior){
+        this.flyBehavior = flyBehavior;
+    }
+    public void setQuackBehavior(QuackBehavior quackBehavior){
+        this.quackBehavior = quackBehavior;
+    }
+    //other things ducks do...
+}
+```
+---
+### Solution 1.3
+```java
+class MallardDuck extends Duck {
+    public MallardDuck(){
+        quackBehavior = new Quack();
+        flyBehavior = new FlyWithWings();
+    }
+    public void display(){
+        //look like a mallard duck
+    }
+}
+```
+---
+### Solution 1.3
+```java
+class MallardDuck extends Duck {
+    public MallardDuck(){
+        this.setQuackBehavior(new Quack());
+        this.setFlyBehavior(new FlyWithWings());
+    }
+    public void display(){
+        //look like a mallard duck
+    }
+}
+```
+---
+### Solution 1.3
+```java
+class MallardDuck extends Duck {
+    public MallardDuck(){
+        super(new Quack(), new FlyWithWings());
+        //in case you are worried that one might not be set
+    }
+    public void display(){
+        //look like a mallard duck
+    }
+}
+```
+---
+### Strategy Pattern
+- You think of a group of behaviors as a family of algorithms |
+- This is called using 'Composition' |
+    - Instead of inheriting behaviors |
+- Favour composition over inheritance |
+---
+### Where have you seen this
+- Services in java
+    - Construct service with dependent services
+    - Can be swapped out at run time
+    - Can be swapped out for testing
+- Modules in angular
+    - Dependencies pulled in can be swapped out
+- Everywhere because this is design pattern #1
+---
+### Coffee Shop
+- First structured possible drinks in basic OO way
+- Beverage class from which all drinks inherit
+- A series of drinks which extend this class
+    - ex. Espresso, DarkRoast, HouseBlend, Decaf
+- A number of condiments to be added to the drinks
+    - ex. milk, soy, mocha, whipped milk
+---
+### Problem 2
+- The solution for Coffee shop was to create a class for each condiment
+- Espresso with milk, Espresso with mocha, Espresso with soy and mocha
+- Class explosion happens pretty quick
+- If price of milk goes up, hundreds of classes need to be changed
+---
+### Solution 2
+- Create boolean on Beverage for each condiment
+- Create cost method in Beverage
+- Have cost method in each subclass overwrite and incorporate
+---
+### Problem 2.1
+- 
+---
+### Solution 2.1
+- 
 ---
 
-### Refactoring
 
-- Types of Requirements |
-- Refactoring |
-- Technical Debt |
-- Code Smells |
+
+## Based on the book : 'Intro to Design Patterns'
 
 ---
-
-#### Types of Requirements
-
-- Functional |
-- Operational | 
-- Developmental |
-
-Note:
-- Functional: Use cases, features
-- Operational: Performance, SLA
-- Developmental: Developers QOL
-- Raise hand if you have had a refactoring sprint or investment to just improve code readability
-
-
----
-
-#### Refactoring
-
-![Stickmen](http://deus.co.uk/images/refactoring.png)
-
----
-
-#### Why Refactor
-
-+++
-
->By continuously improving the design of code, we make it easier and easier to work with.
-
----
-
-#### What Is Refactoring
-
-+++
-
-> Code Refactoring is the process of clarifying and simplifying the design of existing code, without changing its behavior.
-
----
-
-
-#### When 
-
-- Brittle Code |
-- Turn around times on Functional Requirements increased |
-- Debugging takes longer |
-- Onboarding New Joiners takes longer |
-- Code Smells |
-
----
-
-#### Technical Debt
-
-+++
-
-> The implied cost of additional rework caused by choosing an easy solution now instead of using a better approach that would take longer
-
-+++
-
-![Technical_Debt](https://www.jeremymorgan.com/images/code-smell-2.jpg)
-
----
-
-#### Code Smells
-
-+++
-
-> A code smell is a surface indication that usually corresponds to a deeper problem in the system
-
----
-
-#### Code Smell Categories
-
-- Bloaters |
-- Object orientation Abusers |
-- Change Preventers |
-- Dispensables |
-- Couplers |
-
-Note:
-- Gargantuan Porpotion
-- Incorrect Application of OO
-- Makes change so expensive you dont want to do it
-- Pointless/uneeded
-- Excessive Coupling 
-
----
-
-# Kata
-
-Note:
-- Naming: clear and concise
-- Functions: level of abstraction, one thing, small
-- Code smells: are there any?
-- Refactor: where would you refactor
-
----
-
-### How to write unmaintanable code
-
-- Use horrible naming for variables and functions |
-- Don't break up your functions into abstract levels |
-- Make your code look like a maze |
-- Compete to see who has the most technical debt |
-
----
-
-![Image-Relative](http://giant.gfycat.com/BothLongAstrangiacoral.gif)
-
---- 
 
 ## Thank you!
 ### Be sure to check out the rest of our classes!
