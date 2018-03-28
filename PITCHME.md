@@ -72,10 +72,10 @@ class MallardDuck extends Duck {
 }
 ```
 ---
-###Problem:
+### Problem:
 Flight |
 ---
-###Solution 1:
+### Solution 1:
 - Add a fly method to the Duck class |
 - All ducks will inherit the fly behavior |
 - Much the same way as quack or swim |
@@ -106,7 +106,7 @@ abstract class Duck {
 ```
 ---
 ### Problem 1.1:
-Not all ducks should fly |
+- Not all ducks should fly |
 
 ---
 ### Problem 1.1: Rubber Ducks
@@ -137,20 +137,20 @@ class RubberDuck extends Duck {
 ```
 ---
 ### Problem 1.2: More Flightless, Quackless Ducks
-You have plans to add wooden, plastic, decoy and baby duck in an upcoming release |
-As more flightless ducks are added, more and more overwriting will be necessary |
+- You have plans to add wooden, plastic, decoy and baby duck in an upcoming release |
+- As more flightless ducks are added, more and more overwriting will be necessary |
 ---
 ### Solution 1.2: Interfaces
-Have ducks implement the Flyable or Quackable interface  |
-Ducks which don't fly or quack never need worry about that |
+- Have ducks implement the Flyable or Quackable interface  |
+- Ducks which don't fly or quack never need worry about that |
 ---
 ### Problem 1.3: That is a bad idea
-Code duplication like crazy |
-Any time you want to change how fly works you must change all 'normal' ducks |
+- Code duplication like crazy |
+- Any time you want to change how fly works you must change all 'normal' ducks |
 ---
 ### Problem 1.3: That is a bad idea
-Inheritance isn't going to be a good solution  |
-Loading up on interfaces isn'y going to be a good solution |
+- Inheritance isn't going to be a good solution  |
+- Loading up on interfaces isn'y going to be a good solution |
 ---
 ### Thinking 1.3
 - Encapsulate (Separate)
