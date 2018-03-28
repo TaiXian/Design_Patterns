@@ -167,7 +167,7 @@ class RubberDuck extends Duck {
 - Interface for Fly based behaviors
 - Interface for Quack based behaviors
 - Create classes for the different implementations |
-- each should implement one of the interfaces |
+- Each should implement one of the interfaces |
 ---
 ### Aside 1.3
 - Allow duck behavior to change dynamically |
@@ -176,22 +176,17 @@ class RubberDuck extends Duck {
 ---
 ### Solution 1.3
 ```java
-interface QuackBehavior{
+interface FlyBehavior{
     public void fly();
 }
-class Quack implements QuackBehavior {
+class FlyWithWings implements FlyBehavior {
     public void fly(){
-        //implement 'normal' quacking
+        //implement 'normal' flying
     }
 }
-class Squeak implements QuackBehavior {
+class FlyNoWay implements FlyBehavior {
     public void fly(){
-        //squeak
-    }
-}
-class Mute implements QuackBehavior {
-    public void fly(){
-        //don't quack
+        //don't fly
     }
 }
 ```
@@ -335,7 +330,8 @@ class MallardDuck extends Duck {
 
 
 
-## Based on the book : 'Intro to Design Patterns'
+## Based on the book :
+## 'Intro to Design Patterns'
 
 ---
 
