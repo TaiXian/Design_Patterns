@@ -8,7 +8,7 @@
 
 - Clean Code
 - Code Complete
-- Testable Code 
+- Testable Code
 - Code Reviewing
 - **Design Patterns**
 - Functional Programming
@@ -321,12 +321,107 @@ class MallardDuck extends Duck {
 - Create cost method in Beverage
 - Have cost method in each subclass overwrite and incorporate
 ---
+### Solution 2
+```java
+abstract class Beverage {
+    boolean milk;
+    boolean soy;
+    boolean mocha;
+    boolean whip;
+    double getCost(){
+        //calculate a base price based on the booleans;
+        return 0;
+    }
+}
+```
+---
+### Solution 2
+```java
+class DarkRoast extends Beverage {
+    public double getCost(){
+        double baseCost = super.getCost();
+        return baseCost + 4;
+    }
+}
+```
+- 5 Classes total|
 ### Problem 2.1
-- 
+- This structure is very rigid
+- This structure wouldn't support double mocha
+- Something like IcedTea maintains a whip bool
+- As we add condiments we have to change the superclass
+---
+### Open-Closed Principle
+- Classes should be open for extension
+- Classes should be closed for modification
+- Applying this everywhere is excessive and wasteful
+    - Produces complex, hard-to-understand code
+---
+### Decorator Pattern
+- Construct objects procedurally
+- Instantiate with other instances of same interface
 ---
 ### Solution 2.1
-- 
+- Create class for each beverage type
+- Create class for each condoment
+- Each condiment is a beverage
+- Each condiment takes a beverage
 ---
+### Solution 2.1
+```java
+abstract class Beverage {
+    String description = "Unknown Beverage";
+    public String getDescription(){
+        return description;
+    }
+    abstract double getCost();
+}
+class DarkRoast implements Beverage {
+    public double getCost(){
+        return 4;
+    }
+}
+class Mocha implements Beverage {
+    Beverage baseBeverage;
+    public Mocha(Beverage baseBeverage){
+        this.baseBeverage = baseBeverage;
+    }
+    public double getCost(){
+        return baseBeverage.getCost() + 1;
+    }
+}
+```
+---
+### Solution 2.1
+- We can decorate dynamically at any time
+- All custom logic happens one side of base
+- Decorators and objects they decorate are used the same way
+---
+### Solution 2.1
+- "The Decorator pattern attaches additional Responsibilities to an object dynamically.
+- Decorators provide a flexible alternative ot subclassing for extending functionality."
+---
+### Kata 2.1
+- Design the above for Espresso, HouseBlend and DarkRoast
+- Mocha, whip, Soy and milk
+- What other classes might you want to make?
+- How do you handle sizes, and varied condiment price by size
+---
+### Places you've seen decorator
+- Java I/O
+    - InputStream has concrete Children
+        - StingBufferedInputStream
+    - Concrete Decorator Classes
+        - PushBackInputStream
+    - OutputStream, Reader, Writer etc.
+---
+### Kata 2.2
+- LowerCaseInputStream
+- Create InputStream decorator
+- Transform input to lower case
+
+
+
 
 
 
