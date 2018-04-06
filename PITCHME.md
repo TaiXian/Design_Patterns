@@ -419,8 +419,186 @@ class Mocha implements Beverage {
 - LowerCaseInputStream
 - Create InputStream decorator
 - Transform input to lower case
+---
+### Statement 3
+- Every time you use new you are programming to an implementation
+- We want to separate our concerns to make our class "closed for modification"
+- Once the instantiation code is isolated we can swap it out
+---
+### Problem 3
+```java
+class PizzaStore {
+    public Pizza orderPizza(){
+        Pizza pizza = new Pizza();
+
+        pizza.prepare();
+        pizza.bake();
+        pizza.cut();
+        pizza.box();
+        return pizza;
+    }
+}
+```
+---
+### Problem 3: Type
+```java
+class PizzaStore {
+    public Pizza orderPizza(String type){
+        Pizza pizza;
+
+        if(type.equals("cheese")){
+            pizza = new ChesePizza();
+        } else if (type.equals("greek")){
+            pizza = new GreekPizza();
+        } else if (type.equals("pepperoni")){
+            pizza = new PepperoniPizza();
+        }
+
+        ...
+    }
+}
+```
+---
+### Problem 3: Type
+- Every type we add needs changes in this class
+- The switching takes up most of the class
+- We need to encapsulate
+---
+### Factory Pattern
+- We move out all code concerned with instantiating concrete types
+- This factory will take out concerns and return to us a Pizza
+- This factory can be swapped out and the Pizza process won't care
+---
+### Solution 3
+```java
+interface PizzaFactory {
+    Pizza createPizza(String type);
+}
+```
+---
+### Solution 3
+```java
+class FirstPizzaFactory implements PizzaFactory{
+    public Pizza createPizza(String type){
+        Pizza pizza = null;
+        if(type.equals("cheese")){
+            pizza = new ChesePizza();
+        } else if (type.equals("greek")){
+            pizza = new GreekPizza();
+        } else if (type.equals("pepperoni")){
+            pizza = new PepperoniPizza();
+        }
+        return pizza;
+    }
+}
+```
+---
+### Solution 3
+```java
+class PizzaStore {
+    PizzaFactory pizzaFactory;
+    public PizzaStore(PizzaFactory pizzaFactory){
+        this.pizzaFactory = pizzaFactory;
+    }
+    public Pizza orderPizza(){
+        Pizza pizza = pizzaFactory.createPizza();
+        pizza.prepare();
+        pizza.bake();
+        pizza.cut();
+        pizza.box();
+        return pizza;
+    }
+}
+```
+---
+### Static Factory Pattern
+- Pros: You don't instantiate Factory
+- Cons: No Subclassing
+---
+### Possible Future Factories
+- ChicagoPizzaFactory
+- NewYorkPizzaFactory
+- CaliforniaPizzaFactory
+- NeapolitanPizzaFactory
+- SushiPizzaFactory
+- etc...
+---
+### Possible Future Factories
+```java
+class PizzaFranchise {
+    PizzaFactory nyFactory = new NewYorkPizzaFactory();
+    PizzaStore nyStore = new PizzaStore(nyFactory);
+    nyStore.orderPizza("veggie");
+
+    PizzaFactory chicagoFactory = new ChicagoPizzaFactory();
+    PizzaStore chicagoStore = new PizzaStore(chicagoFactory);
+    chicagoStore.orderPizza("veggie");
+}
+```
+---
+### Possible Future Factories
+- The two stores make their different Pizzas
+- The rest of the Pizza making process remains in tact
+---
+### Better Idea
+- Each Factory is really tied to the type of store
+- Are the factory declarations really neccessary
+---
+### Better Idea
+```java
+abstract class PizzaStore {
+    public Pizza orderPizza(){
+        Pizza pizza = this.createPizza();
+        pizza.prepare();
+        pizza.bake();
+        pizza.cut();
+        pizza.box();
+        return pizza;
+    }
+    protected abstract Pizza createPizza(String type);
+}
+```
+---
+### Better Idea
+```java
+class NYPizzaStore extends PizzaStore {
+    public Pizza createPizza(String type){
+        Pizza pizza = null;
+        if(type.equals("cheese")){
+            pizza = new ChesePizza();
+        } else if (type.equals("greek")){
+            pizza = new GreekPizza();
+        } else if (type.equals("pepperoni")){
+            pizza = new PepperoniPizza();
+        }
+        return pizza;
+    }
+}
+```
+---
+### Better Idea
+```java
+class PizzaFranchise {
+    PizzaStore nyStore = new NYPizzaStore();
+    nyStore.orderPizza("veggie");
+
+    PizzaStore chicagoStore = new ChicagoPizzaStore();
+    chicagoStore.orderPizza("veggie");
+}
+```
+---
+### Factory Method Pattern
+- Defines interface for creating an object
+- Subclasses decide which class to instantiate
+---
+### Kata
 
 ---
+### Abstract Factory Pattern
+- If we have extra time I might look at this
+---
+
+
 
 
 
